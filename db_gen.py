@@ -479,7 +479,7 @@ Loc = {
             "date": "31-01-2022"
         },
         {
-            "location": "storage/DCIM/Camera/w002022.png",
+            "location": "storage/DCIM/Camera/w02022.png",
             "label": "watermelon;red;green;tasty",
             "date": "31-01-2022"
         },
