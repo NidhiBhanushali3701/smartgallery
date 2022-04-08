@@ -1,4 +1,9 @@
-{
+from captcha.image import ImageCaptcha
+#import cv2
+from PIL import Image
+#import main
+#genS = "Gen Img"
+Loc = {
     "images": [
       {
             "location": "Root/private/var/mobile/Media/DCMI/100/APPLE/a02022.png",
@@ -779,3 +784,26 @@
         }
     ]
 }
+def String2Img(imgLoc,i,genS="Hello World!"):
+  img = ImageCaptcha(width = 300, height = 150)
+  #gImg = img.generate(genS)
+  img.write(genS, imgLoc)
+#gImg = img.generate_image(generate())
+
+def ImgOnScreen(label,location,i):
+  String2Img(genS=label,imgLoc=location,i=i)
+  IMG = Image.open(location)
+  IMG.show()
+  print("Image on screen")
+  #display(IMG)
+#ImgOnScreen()
+
+def GenerateImgs():
+  #Loc = main.Loc
+  for i in range(2):#(len(Loc["images"])):
+    data = Loc["images"][i]
+    loc = ("GenImg/"+data["location"][len(data["location"])-10:])
+    ImgOnScreen(label=data['label'],location=loc,i=i)
+    #cursor.execute(""" INSERT INTO Images(location,label,date) VALUES (?,?,?)""", (data["location"],data["label"],data["date"]))
+
+GenerateImgs()
